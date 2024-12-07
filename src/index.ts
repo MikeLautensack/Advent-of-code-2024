@@ -1,1 +1,1 @@
-console.log("project up and running!");
+console.log("Advent of Code 2024!");
