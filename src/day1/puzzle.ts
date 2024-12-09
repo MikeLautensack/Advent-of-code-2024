@@ -2,6 +2,7 @@ import * as fs from "fs";
 import path from "path";
 import { findDistanceBetweenLists } from "./findDistance.ts";
 import { fileURLToPath } from "url";
+import { findSimilarityScore } from "./findSimilarityScore.ts";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -41,4 +42,8 @@ const lists = getParseDay1Input(fileContents);
 
 const distance = findDistanceBetweenLists(lists.list1, lists.list2);
 
+const score = findSimilarityScore(lists.list1, lists.list2);
+
 console.log(`Answer is: ${distance}`);
+
+console.log(`Score is: ${score}`);

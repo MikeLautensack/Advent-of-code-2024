@@ -1,5 +1,6 @@
 import { describe, expect, test } from "@jest/globals";
 import { findDistanceBetweenLists } from "./findDistance.ts";
+import { findSimilarityScore } from "./findSimilarityScore.ts";
 
 describe("Day 1 Puzzle", () => {
   describe("Part 1", () => {
@@ -22,5 +23,24 @@ describe("Day 1 Puzzle", () => {
       expect(res3).toBe(15);
     });
   });
-  describe("Part 2", () => {});
+  describe("Part 2", () => {
+    test("find similarity score", () => {
+      const list1 = [1, 2, 3];
+      const list2 = [1, 2, 3];
+
+      const list3 = [1, 2, 3];
+      const list4 = [0, 0, 0];
+
+      const list5 = [1, 2, 3];
+      const list6 = [3, 3, 3];
+
+      const res1 = findSimilarityScore(list1, list2);
+      const res2 = findSimilarityScore(list3, list4);
+      const res3 = findSimilarityScore(list5, list6);
+
+      expect(res1).toBe(6);
+      expect(res2).toBe(0);
+      expect(res3).toBe(9);
+    });
+  });
 });
